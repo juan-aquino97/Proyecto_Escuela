@@ -56,7 +56,7 @@ ROOT_URLCONF = 'ProyectoEscuela.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [r"C:\Users\juanc\Desktop\Programación estudio\Coderhouse\Python\ProyectoEscuela\ProyectoEscuela\templates"],
+        'DIRS': [r"ProyectoEscuela\templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
