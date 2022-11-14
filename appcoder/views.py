@@ -58,3 +58,18 @@ def creacion_profesores(request):
 
     contexto = {"formulario": formulario}
     return render(request, r"appcoder/profesores_formularios.html", contexto)
+
+
+    #Búsqueda con form
+
+def busqueda_curso(request):
+
+    return render(request, "appcoder/busqueda_cursos.html")
+
+def resultado_busqueda_cursos(request):
+    
+    nombre_curso =  request.GET["nombre_curso"]
+
+    cursos = Curso.objects.filter(nombre__icontains=nombre_curso)
+
+    return render(request,"appcoder/res_bus_cursos.html", {"cursos": cursos})
