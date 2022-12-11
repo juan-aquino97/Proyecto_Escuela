@@ -1,11 +1,18 @@
 {% extends 'appcoder/base.html' %} 
-
 {% block contenido %} 
+{% csrf_token%}
 <ul>
-    {% for curso in cursos %}
-        <li>
-            {{curso.nombre}} - {{curso.camada}}
-        </li>
-    {% endfor %}
+
+    <table>
+        <tr>
+            <th>Curso</th>
+        </tr>
+        <tr>
+            {% for curso in cursos %}
+            <td>{{curso.nombre}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
 </ul>
-{% endblock %} 
+{% endblock %}

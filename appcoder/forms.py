@@ -7,3 +7,7 @@ class ProfesorFormulario(forms.Form):
     apellido = forms.CharField()
     email = forms.CharField()
     profesion = forms.CharField()
+
+class CursoFormulario(forms.Form):
+    nombre = forms.CharField(min_length=3)
+    camada = forms.IntegerField()

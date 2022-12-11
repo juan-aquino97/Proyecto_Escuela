@@ -16,6 +16,10 @@ urlpatterns = [
 
     path("cursos/buscar/", views.busqueda_curso, name="coder-cursos-buscar"),
 
+    path("cursos/borrar/<id>/", views.eliminar_curso, name="coder-cursos-borrar"),
+
+    path("cursos/editar/<id>", views.editar_curso, name="coder-cursos-editar"),
+
     path("cursos/buscar/resultados", views.resultado_busqueda_cursos, name="coder-cursos-resultado-busqueda"),
     
     path("entregables/", views.entregables,name="coder-entregables"),

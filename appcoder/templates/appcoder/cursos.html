@@ -3,4 +3,15 @@
 {% block contenido %}
 <h1>Cursos disponibles</h1>
 <p>Estos son los cursos que tienen vacantes por ahora</p>
+{% if listado_cursos %}
+<ul>
+    {%for curso in listado_cursos%}
+        <li>{{curso}} <a href="{% url 'coder-cursos-borrar' curso.id %}">Borrar </a>    
+            <a href="{% url 'coder-cursos-editar' curso.id %}">Editar</a>
+        </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No hay cursos disponibles de momento</p>
+{% endif  %}
 {% endblock %}
