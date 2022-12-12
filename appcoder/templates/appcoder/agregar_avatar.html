@@ -1,0 +1,23 @@
+{% extends 'appcoder/base.html' %}
+
+{% block contenido %}
+
+{% if errors %}
+
+<p style="color:red">{{errors}}</p>
+
+    {% endif %}
+
+
+{% csrf_token %}
+
+
+
+<form>
+    
+
+    {{ form.as_p }}
+    <input type="submit" value="Guardar">
+
+</form>
+{% endblock %}

@@ -18,6 +18,7 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{% static 'appcoder/css/styles.css' %}" rel="stylesheet" />
     </head>
+    
     <body>
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
@@ -26,6 +27,13 @@
                 <a class="navbar-brand" href="{% url 'coder-cursos' %}"> Cursos</a>
                 <a class="navbar-brand" href="{% url 'coder-profesores' %}"> Profesores</a>
                 <a class="navbar-brand" href="{% url 'coder-entregables' %}"> Entregables</a>
+                {% if request.user.is_authenticated %}
+                <a class="btn btn-primary" href="{% url 'auth-logout' %}">Logout</a>
+                <p>Hola {{request.user.username}}</p>
+                <img src="{{imagen_url}}" style="max-width: 45px">
+                {% else %}
+                <a class="btn btn-primary" href="{% url 'auth-login' %}">Login</a>
+                {% endif %}
             </div>
         </nav>
         <!-- Masthead-->
